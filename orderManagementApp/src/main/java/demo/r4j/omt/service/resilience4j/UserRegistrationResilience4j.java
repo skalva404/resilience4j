@@ -1,7 +1,8 @@
-package com.gl.orderManagementApp.service.resilience4j;
+package demo.r4j.omt.service.resilience4j;
 
-import com.gl.orderManagementApp.dto.SellerDto;
+import demo.r4j.omt.dto.SellerDto;
 import io.github.resilience4j.bulkhead.annotation.Bulkhead;
+import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
@@ -41,18 +42,22 @@ public class UserRegistrationResilience4j {
         logger.info("calling getSellerList()");
         return restTemplate.getForObject("/sellersList", List.class);
     }
+
     public String rateLimiterfallback(SellerDto sellerDto, Throwable t) {
         logger.error("Inside rateLimiterfallback, cause - {}", t.toString());
         return "Inside rateLimiterfallback method. Some error occurred while calling service for seller registration";
     }
+
     public String bulkHeadFallback(SellerDto sellerDto, Throwable t) {
         logger.error("Inside bulkHeadFallback, cause - {}", t.toString());
         return "Inside bulkHeadFallback method. Some error occurred while calling service for seller registration";
     }
+
     public String retryfallback(SellerDto sellerDto, Throwable t) {
         logger.error("Inside retryfallback, cause - {}", t.toString());
         return "Inside retryfallback method. Some error occurred while calling service for seller registration";
     }
+
     public String fallbackForRegisterSeller(SellerDto sellerDto, Throwable t) {
         logger.error("Inside circuit breaker fallbackForRegisterSeller, cause - {}", t.toString());
         return "Inside circuit breaker fallback method. Some error occurred while calling service for seller registration";
@@ -60,6 +65,9 @@ public class UserRegistrationResilience4j {
 
     public List<SellerDto> fallbackForGetSeller(Throwable t) {
         logger.error("Inside fallbackForGetSeller, cause - {}", t.toString());
+        if (t instanceof CallNotPermittedException) {
+            logger.info("Inside fallbackForGetSeller, cause - CallNotPermittedException");
+        }
         SellerDto sd = new SellerDto();
         sd.setFirstName("john");
         sd.setId(1111);
@@ -68,5 +76,4 @@ public class UserRegistrationResilience4j {
         defaultList.add(sd);
         return defaultList;
     }
-
 }

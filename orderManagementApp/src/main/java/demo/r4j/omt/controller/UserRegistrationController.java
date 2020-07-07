@@ -1,7 +1,7 @@
-package com.gl.orderManagementApp.controller;
+package demo.r4j.omt.controller;
 
-import com.gl.orderManagementApp.dto.SellerDto;
-import com.gl.orderManagementApp.service.UserRegistrationService;
+import demo.r4j.omt.dto.SellerDto;
+import demo.r4j.omt.service.UserRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,7 +1,7 @@
-package com.gl.orderManagementApp.service;
+package demo.r4j.omt.service;
 
-import com.gl.orderManagementApp.dto.SellerDto;
-import com.gl.orderManagementApp.service.resilience4j.UserRegistrationResilience4j;
+import demo.r4j.omt.dto.SellerDto;
+import demo.r4j.omt.service.resilience4j.UserRegistrationResilience4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

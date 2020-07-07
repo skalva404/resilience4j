@@ -1,4 +1,4 @@
-package com.gl.orderManagementApp;
+package demo.r4j.omt;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

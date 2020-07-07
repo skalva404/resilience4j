@@ -18,12 +18,12 @@ resilience4j.circuitbreaker:
         - java.util.concurrent.TimeoutException
         - org.springframework.web.client.ResourceAccessException
       ignoreExceptions:
-          - com.gl.orderManagementApp.service.MyException
+        - demo.r4j.omt.service.MyException
     service2:
       registerHealthIndicator: true
       ringBufferSizeInClosedState: 6
       ringBufferSizeInHalfOpenState: 4
-      waitDurationInOpenState: 20s
+      waitDurationInOpenState: 10s
       failureRateThreshold: 60
 
 resilience4j.ratelimiter:

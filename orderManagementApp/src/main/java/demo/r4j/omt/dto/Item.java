@@ -1,4 +1,4 @@
-package com.gl.orderManagementApp.dto;
+package demo.r4j.omt.dto;
 
 public class Item {
         private long id;

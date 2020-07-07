@@ -1,6 +1,6 @@
-package com.gl.orderManagementApp.service;
+package demo.r4j.omt.service;
 
-import com.gl.orderManagementApp.dto.SellerDto;
+import demo.r4j.omt.dto.SellerDto;
 
 import java.util.List;
 
