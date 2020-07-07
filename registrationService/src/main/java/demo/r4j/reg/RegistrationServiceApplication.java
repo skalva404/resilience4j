@@ -1,4 +1,4 @@
-package com.gl.registrationService;
+package demo.r4j.reg;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

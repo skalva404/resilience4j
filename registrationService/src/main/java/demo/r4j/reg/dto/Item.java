@@ -1,4 +1,4 @@
-package com.gl.registrationService.dto;
+package demo.r4j.reg.dto;
 
 public class Item {
         private long id;

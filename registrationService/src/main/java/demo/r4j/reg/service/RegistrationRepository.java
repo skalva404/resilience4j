@@ -1,6 +1,6 @@
-package com.gl.registrationService.service;
+package demo.r4j.reg.service;
 
-import com.gl.registrationService.dto.SellerDto;
+import demo.r4j.reg.dto.SellerDto;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

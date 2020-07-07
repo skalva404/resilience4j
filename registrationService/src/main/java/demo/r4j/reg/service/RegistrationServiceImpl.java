@@ -1,6 +1,6 @@
-package com.gl.registrationService.service;
+package demo.r4j.reg.service;
 
-import com.gl.registrationService.dto.SellerDto;
+import demo.r4j.reg.dto.SellerDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

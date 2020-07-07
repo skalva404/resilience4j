@@ -1,4 +1,4 @@
-package com.gl.registrationService.config;
+package demo.r4j.reg.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +18,7 @@ public class SwaggerConfig {
     @Bean
     public Docket swagConfig(){
        return new Docket(DocumentationType.SWAGGER_2).select()
-                .apis(RequestHandlerSelectors.basePackage("com.gl"))
+                .apis(RequestHandlerSelectors.basePackage("demo.r4j"))
                 .build()
                .apiInfo(getApiInfo());
     }
